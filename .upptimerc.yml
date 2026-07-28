@@ -16,7 +16,10 @@ assignees:
   - lexisnexus
 
 status-website:
-  # cname: status.sepaone.com   # Phase B: aktivieren, sobald der DNS-CNAME in Cloudflare umgestellt ist
+  # Phase B (Umzug auf status.sepaone.com): "cname" aktivieren und "baseUrl" entfernen,
+  # sobald der DNS-CNAME in Cloudflare umgestellt ist.
+  # cname: status.sepaone.com
+  baseUrl: /status
   name: SEPAone Status
   logoUrl: https://sepaone.com/favicon.ico
   introTitle: "**SEPAone** Systemstatus"
