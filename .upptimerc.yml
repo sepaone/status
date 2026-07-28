@@ -2,14 +2,23 @@
 owner: sepaone
 repo: status
 
-# Überwachte Endpunkte (Checks alle 5 Minuten via GitHub Actions)
+# Überwachte Komponenten (Checks alle 5 Minuten via GitHub Actions).
+# Wording angelehnt an die abzulösende Atlassian-Statuspage.
 sites:
-  - name: SEPAone Website
+  - name: Website
     url: https://sepaone.com
-  - name: SEPAone Portal Health
+  - name: API
+    # Antwortet unauthentifiziert mit 401 + application/vnd.sepaone.v1+json —
+    # beweist, dass der komplette API-Stack inkl. Auth-Layer antwortet.
+    url: https://sepaone.com/api/mandates
+    expectedStatusCodes:
+      - 401
+  - name: Merchant Dashboard
     url: https://sepaone.com/up
-  - name: SEPAone Website (www)
-    url: https://www.sepaone.com
+  # Workers: erst aktivieren, wenn der /up/workers-Endpoint im Portal deployt ist
+  # (PR "Workers health endpoint" im Repo sepaone/sepaone-portal).
+  # - name: Workers
+  #   url: https://sepaone.com/up/workers
 
 # Bei Vorfällen wird dieses GitHub-Konto dem Issue zugewiesen
 assignees:
