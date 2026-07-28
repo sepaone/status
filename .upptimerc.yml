@@ -21,7 +21,8 @@ status-website:
   # cname: status.sepaone.com
   baseUrl: /status
   name: SEPAone Status
-  logoUrl: https://sepaone.com/favicon.ico
+  # Logo liegt in assets/ auf main; raw-URL funktioniert unabhängig von GitHub Pages / Custom Domain
+  logoUrl: https://raw.githubusercontent.com/sepaone/status/main/assets/logo-sepaone.png
   introTitle: "**SEPAone** Systemstatus"
   introMessage: Live-Verfügbarkeit und Störungshistorie der SEPAone-Dienste. Vorfälle und Wartungen werden hier automatisch veröffentlicht.
   navbar:
@@ -29,3 +30,39 @@ status-website:
       href: /
     - title: sepaone.com
       href: https://sepaone.com
+  # SEPAone-Branding: helles Statuspage-artiges Design in Markenfarbe #4abdc5.
+  # Die !important-Overrides erzwingen das helle Theme auch bei System-Darkmode,
+  # damit die Seite immer einheitlich aussieht.
+  customHeadHtml: |
+    <style>
+      :root {
+        --body-background-color: #f6fafb !important;
+        --body-text-color: #14343a !important;
+        --card-background-color: #ffffff !important;
+        --nav-background-color: #ffffff !important;
+        --nav-border-bottom-color: #dfecee !important;
+        --nav-current-border-bottom-color: #4abdc5 !important;
+        --card-border-color: #dfecee !important;
+        --up-border-left-color: #27b376 !important;
+        --tag-up-background-color: #27b376 !important;
+        --down-border-left-color: #e5484d !important;
+        --tag-down-background-color: #e5484d !important;
+        --down-background-color: #fdecec !important;
+        --degraded-border-left-color: #f5a623 !important;
+        --tag-degraded-background-color: #f5a623 !important;
+        --change-background-color: #f5a623 !important;
+        --submit-button-background-color: #4abdc5 !important;
+        --submit-button-border-color: #37a9b1 !important;
+        --error-button-background-color: #4abdc5 !important;
+        --error-button-border-color: #37a9b1 !important;
+        --graph-opacity: 1 !important;
+        --graph-filter: none !important;
+      }
+      body { -webkit-font-smoothing: antialiased; }
+      a { color: #2b98a0; }
+      article {
+        border-radius: 10px;
+        box-shadow: 0 1px 2px rgba(20, 52, 58, 0.05);
+      }
+      nav img { height: 26px; width: auto; }
+    </style>
