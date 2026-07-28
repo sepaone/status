@@ -1,0 +1,28 @@
+# Upptime-Konfiguration für SEPAone — https://upptime.js.org/docs
+owner: sepaone
+repo: status
+
+# Überwachte Endpunkte (Checks alle 5 Minuten via GitHub Actions)
+sites:
+  - name: SEPAone Website
+    url: https://sepaone.com
+  - name: SEPAone Portal Health
+    url: https://sepaone.com/up
+  - name: SEPAone Website (www)
+    url: https://www.sepaone.com
+
+# Bei Vorfällen wird dieses GitHub-Konto dem Issue zugewiesen
+assignees:
+  - lexisnexus
+
+status-website:
+  # cname: status.sepaone.com   # Phase B: aktivieren, sobald der DNS-CNAME in Cloudflare umgestellt ist
+  name: SEPAone Status
+  logoUrl: https://sepaone.com/favicon.ico
+  introTitle: "**SEPAone** Systemstatus"
+  introMessage: Live-Verfügbarkeit und Störungshistorie der SEPAone-Dienste. Vorfälle und Wartungen werden hier automatisch veröffentlicht.
+  navbar:
+    - title: Status
+      href: /
+    - title: sepaone.com
+      href: https://sepaone.com
