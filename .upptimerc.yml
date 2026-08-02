@@ -15,10 +15,11 @@ sites:
       - 401
   - name: Merchant Dashboard
     url: https://sepaone.com/up
-  # Workers: erst aktivieren, wenn der /up/workers-Endpoint im Portal deployt ist
-  # (PR "Workers health endpoint" im Repo sepaone/sepaone-portal).
-  # - name: Workers
-  #   url: https://sepaone.com/up/workers
+  - name: Workers
+    # /ping ist bereits deployt und prüft Solid-Queue-Heartbeats (app/models/health.rb).
+    # Die Route antwortet immer mit HTTP 200 — "down" erkennen wir am fehlenden Body-Text.
+    url: https://sepaone.com/ping
+    __dangerous-body-down-if-text-missing: '"solid_queue":"pong"'
 
 # Bei Vorfällen wird dieses GitHub-Konto dem Issue zugewiesen
 assignees:
