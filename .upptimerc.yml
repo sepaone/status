@@ -26,10 +26,8 @@ assignees:
   - lexisnexus
 
 status-website:
-  # Phase B (Umzug auf status.sepaone.com): "cname" aktivieren und "baseUrl" entfernen,
-  # sobald der DNS-CNAME in Cloudflare umgestellt ist.
-  # cname: status.sepaone.com
-  baseUrl: /status
+  # Eigene Domain seit Phase B (Cloudflare-CNAME auf sepaone.github.io, DNS only).
+  cname: status.sepaone.com
   name: SEPAone Status
   # Logo liegt in assets/ auf main; raw-URL funktioniert unabhängig von GitHub Pages / Custom Domain
   logoUrl: https://raw.githubusercontent.com/sepaone/status/main/assets/logo-sepaone.png
